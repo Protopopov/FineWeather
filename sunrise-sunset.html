@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<!-- <link rel="stylesheet" media="all" href="style.css"> -->
+<script>
+	
+	let SunriseResponse = {};
+	let Response = '';
+
+	// Request for getting data 
+	// form https://sunrise-sunset.org/api
+	function RequestData(){
+		var xhr = new XMLHttpRequest(),
+		    method = "GET",
+	    	url = "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&formatted=1";
+
+		xhr.open(method, url, true);
+		xhr.onreadystatechange = function () {
+	        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+	            Response = JSON.parse(xhr.responseText);
+	            console.log(Response.results);
+	            
+	            return Response.results;
+	        };
+
+	    };
+		xhr.send();
+	}
+
+	RequestData();
+
+	// console.log(SunriseResponse);
+
+</script>
+
+<head>
+	<title>Sunrise Sunset</title>
+
+</head>
