@@ -24,7 +24,7 @@
 
 	</style>
 
-	<h3>Погода в городое:</h3>
+	<h3>Погода в городе:</h3>
 
 	<p id="demo"></p>
 
@@ -39,7 +39,7 @@
 
 
 	<div class="slidecontainer">
-	  <input type="range" list="tickmarks" min="0" max="24" value="12" class="slider" id="myRange">
+	  <input type="range" list="tickmarks" min="0" max="24" class="slider"  step="1" id="myRange">
 
 		<datalist id="tickmarks">
 		  <option value="0">
@@ -51,6 +51,14 @@
 	</div>
 
 	<div id="sliderTime">1</div>
+
+	<p>Your location:</p>
+	<button onclick="getLocation()">Find me</button>
+	<div id="local"></div>
+	
+		
+	
+
 
 </body>
 </html>
